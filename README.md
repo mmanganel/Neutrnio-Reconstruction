@@ -3,12 +3,12 @@
 neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrnios in electron-positron particle colliders. Given the measured x, y, and z momentum components of the meuons and bottom quarks, the method will retern the reconstructed momenta of the neutrino and anti-neutrino. 
 
 ## Requirements
-* numpy
-* sympy
+* [numpy](http://www.numpy.org/)
+* [sympy](https://www.sympy.org/en/index.html)
 
 ## Files
 * reconstruction
-* interpolation
+* interpolation\n
 A module for basic polynomial interpolation.
 
 
