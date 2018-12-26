@@ -9,7 +9,7 @@ neurecon is a Python library that provides a method for numerically reconstructi
 ## Files
 * reconstruction
 * interpolation
-Includes implementation of basic polynomial interpolation
+A module for basic polynomial interpolation.
 
 
 ## Usage
@@ -17,6 +17,7 @@ Includes implementation of basic polynomial interpolation
 ```python
 from neurecon.reconstruction import reconstruct
 
+# Measured x, y, z momenta of the anti-muon, first bottom quark, muon, and second bottom quark in GeV.
 e1 = [-125.91139241, -48.98908297, -78.183743342, 
       -123.8118607, 53.940269187, -78.400421564,
       103.09571851, -6.5923468262, 68.47397934, 
