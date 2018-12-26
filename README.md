@@ -1,6 +1,6 @@
 # Neurecon
 
-Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrnios in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will retern the full kenetic reconstruction of the neutrino and anti-neutrino. 
+Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrnios in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will return the full kenetic reconstruction of the neutrino and anti-neutrino. The solutions that are returned are obtained by finding the roots to a polynomial that interpolates a function of the neutrino z-momentum. These roots are then used to calculate the other five neutrino and anti-neutrino components. Therefore, ...
 
 
 
@@ -21,7 +21,7 @@ A module for basic polynomial interpolation. Used by reconstruct method.
 from neurecon.reconstruction import reconstruct
 
 # Measured x, y, z momenta of the anti-muon, first bottom quark, muon, and second bottom quark in GeV.
-e1 = [-125.91139241, -48.98908297, -78.183743342, 
+ev = [-125.91139241, -48.98908297, -78.183743342, 
       -123.8118607, 53.940269187, -78.400421564,
       103.09571851, -6.5923468262, 68.47397934, 
       37.24678799, -39.496514832, 38.960820109]
@@ -29,7 +29,7 @@ e1 = [-125.91139241, -48.98908297, -78.183743342,
 center_mass_eng = 1000    # Gev
 w_mass = 80.4
 
-solutions, rcoeffs = reconstruct(e1, w_mass, center_mass_eng)
+solutions, rcoeffs = reconstruct(ev, w_mass, center_mass_eng)
 
 print('Number of solutions:', len(solutions))
 for i, sol in enumerate(solutions):
