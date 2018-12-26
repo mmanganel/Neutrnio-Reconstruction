@@ -21,8 +21,11 @@ e1 = [-125.91139241, -48.98908297, -78.183743342,
       -123.8118607, 53.940269187, -78.400421564,
       103.09571851, -6.5923468262, 68.47397934, 
       37.24678799, -39.496514832, 38.960820109]
+      
+center_mass_eng = 1000    # Gev
+w_mass = 80.4
 
-solutions, rcoeffs = reconstruct(e1, 80.4, 1000)
+solutions, rcoeffs = reconstruct(e1, w_mass, center_mass_eng)
 
 print('Number of solutions:', len(solutions))
 for i, sol in enumerate(solutions):
