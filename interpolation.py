@@ -133,9 +133,6 @@ def _getRbarSquared(f, polyfit, var_name, xmin, xmax, n_steps=50):
     
     yfit = yfit[np.isreal(y)]
     y = y[np.isreal(y)]
-
-    assert all([not np.isnan(yi) for yi in y]), 'Floating point arithmatic round off \
-    error in evaluation of y-values causing complex y.'
     
     y_resid = list(map(lambda yi, yfi: yi - yfi, y, yfit))
 
