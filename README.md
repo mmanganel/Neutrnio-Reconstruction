@@ -1,6 +1,6 @@
 # Neurecon
 
-Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrnios in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will return the full kenetic reconstruction of the neutrino and anti-neutrino. The solutions that are returned are obtained by finding the roots to a polynomial that interpolates a function of the neutrino z-momentum. These roots are then used to calculate the other five neutrino and anti-neutrino components. Therefore, ...
+Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrinos in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will return the full kinetic reconstruction of the neutrino and anti-neutrino. The returned solutions are obtained by finding the roots to a polynomial that interpolates a function of the neutrino z-momentum. These roots are then used to calculate the other five neutrino and anti-neutrino components. 
 
 
 
@@ -10,9 +10,33 @@ Neurecon is a Python library that provides a method for numerically reconstructi
 
 ## Files
 * reconstruction: 
-Contains the reconstruct method which takes the measured particles' momenta, along with the center of mass energy and constained mass of the W boson, as input and produces the set of solutions for the reconstructed neutrino and anti-neutrino momenta. 
+Contains the **reconstruct** method which takes the measured particles' momenta, along with the center of mass energy and constained mass of the W boson, as input and produces the set of solutions for the reconstructed neutrino and anti-neutrino momenta. 
 * interpolation: 
 A module for basic polynomial interpolation. Used by reconstruct method.
+
+## Reconstruct
+Reconstructs the momentum of the neutrino and anti-neutrino, given the momentum of the muons and bottom quarks. 
+
+INPUT:
+
+* edata: A list containing the x, y, and z momentum in GeV of the charged leptons and bottom quarks, in the following order,
+      
+      edata := [amux, amuy, amuz, b1x, b1y, b1z, mux, muy, muz, b2x, b2y, b2z],
+      with notation:
+      amu := anti-muon
+      b1 := bottom quark 1*
+      mu := muon
+      b2 := bottom quark 2*
+      * The charge of the bottom quark is assumed to be unknown.
+
+* mwm(default=80.4): The constrained mass of the W boson in GeV.
+
+* cme(default=1000): The center of mass energy.
+        
+OUTPUT:
+
+* solutions: A list of the reconstructed neutrino and anti-neutrino x, y, and z-momenta as a tuple, for each possible solution of nuz, 
+[(nux, nuy, nuz, anux, anuy, anuz), ...].
 
 
 ## Usage
@@ -29,19 +53,17 @@ ev = [-125.91139241, -48.98908297, -78.183743342,
 center_mass_eng = 1000    # Gev
 w_mass = 80.4
 
-solutions, rcoeffs = reconstruct(ev, w_mass, center_mass_eng)
+solutions = reconstruct(ev, mwm=w_mass, cme=center_mass_eng)
 
 print('Number of solutions:', len(solutions))
 for i, sol in enumerate(solutions):
-    print(i+1, sol)
-print('r-squared coeffs:', rcoeffs)
+    print(i+1, sol)      # (nux, nuy, nuz, anux, anuy, anuz)
 ```
 Output:
 ```
 Number of solutions: 2
 1 (-93.46454134528696, -50.83231089912927, -159.54421086481028, 202.84528795528695, 91.96998634032927, 208.6935763218103)
 2 (-184.7487135537596, -18.089040277773734, -26.6171658538459, 294.1294601637596, 59.226715718973736, 75.76653131084592)
-r-squared coeffs: (0.9803735804321968, 0.9822214569539975)
 ```
 
 
