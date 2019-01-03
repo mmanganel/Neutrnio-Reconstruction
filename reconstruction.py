@@ -28,8 +28,7 @@ def reconstruct(edata, mwm=80.4, cme=1000):
 
     """
     
-    assert len(edata) == 12, 'edata should be a list of length 12, containing \
-    the mommenta of the muon and bottom quarks.'
+    assert len(edata) == 12, 'edata should have length 12.'
     
     degree = 4                  # The degree of the interpolating polynomial.
     rbar_threshold = 0.95     
