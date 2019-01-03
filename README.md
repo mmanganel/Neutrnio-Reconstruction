@@ -1,7 +1,6 @@
 # Neurecon
 
-Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrinos in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will return the full kinetic reconstruction of the neutrino and anti-neutrino. The returned solutions are obtained by finding the roots to a polynomial that interpolates a function of the neutrino z-momentum. These roots are then used to calculate the other five neutrino and anti-neutrino components. 
-
+Neurecon is a Python library that provides a method for numerically reconstructing the momenta of neutrinos in electron-positron particle colliders. For a top/anti-top dilepton event, given the measured x, y, and z momenta components of the muons and bottom quarks, the method will return the full kinetic reconstruction of the neutrino and anti-neutrino. 
 
 
 ## Requirements
