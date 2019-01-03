@@ -10,16 +10,16 @@ Neurecon is a Python library that provides a method for numerically reconstructi
 
 ## Files
 * reconstruction: 
-Contains the **reconstruct** method which takes the measured particles' momenta, along with the center of mass energy and constained mass of the W boson, as input and produces the set of solutions for the reconstructed neutrino and anti-neutrino momenta. 
+Contains the *reconstruct* method which takes the measured particles' momenta, along with the center of mass energy and constained mass of the W boson, as input and produces the set of solutions for the reconstructed neutrino and anti-neutrino momenta. 
 * interpolation: 
 A module for basic polynomial interpolation. Used by reconstruct method.
 
 ## Reconstruct
-Reconstructs the momentum of the neutrino and anti-neutrino, given the momentum of the muons and bottom quarks. 
+*reconstruct(edata, mwm=80.4, cme=1000)*: Reconstructs the momentum of the neutrino and anti-neutrino, given the momentum of the muons and bottom quarks. 
 
 INPUT:
 
-* edata: A list containing the x, y, and z momentum in GeV of the charged leptons and bottom quarks, in the following order,
+* edata: An iterable containing the x, y, and z momentum in GeV of the charged leptons and bottom quarks, in the following order,
       
       edata := [amux, amuy, amuz, b1x, b1y, b1z, mux, muy, muz, b2x, b2y, b2z],
       with notation:
