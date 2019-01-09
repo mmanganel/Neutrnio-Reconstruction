@@ -34,8 +34,7 @@ INPUT:
         
 OUTPUT:
 
-* solutions: A list of the reconstructed neutrino and anti-neutrino x, y, and z-momenta as a tuple, for each possible solution of nuz, 
-[(nux, nuy, nuz, anux, anuy, anuz), ...].
+* solutions: A list of the reconstructed neutrino and anti-neutrino x, y, and z-momenta as a tuple, for each possible solution of nuz, e.g. [(nux, nuy, nuz, anux, anuy, anuz), ...].
 
 
 ## Usage
