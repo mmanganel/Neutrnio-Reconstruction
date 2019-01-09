@@ -40,7 +40,7 @@ OUTPUT:
 ## Usage
 
 ```python
-from neurecon.reconstruction import reconstruct
+from neurecon import reconstruct
 
 # Measured x, y, z momenta of the anti-muon, first bottom quark, muon, and second bottom quark in GeV.
 ev = [-125.91139241, -48.98908297, -78.183743342, 
