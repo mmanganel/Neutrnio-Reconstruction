@@ -45,7 +45,7 @@ def reconstruct(edata, mwm=80.4, cme=1000):
 
     # Check for complex domain bounds.
     if not any([d.is_real for d in domain]): 
-        return [], (None, None)
+        return []
     
     domain = [float(d) for d in domain]
 
