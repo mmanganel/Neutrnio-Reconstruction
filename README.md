@@ -4,6 +4,7 @@ Neurecon is a Python library that provides a method for numerically reconstructi
 
 
 ## Requirements
+* Python 3
 * [numpy](http://www.numpy.org/)
 * [sympy](https://www.sympy.org/en/index.html)
 
